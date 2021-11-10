@@ -24,6 +24,7 @@ file_env() {
 file_env "DB_PASSWORD"
 file_env "APP_KEY"
 file_env "MAIL_PASSWORD"
+file_env "HASH_SALT"
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
