@@ -164,5 +164,12 @@ COPY entrypoint.sh \
     cron.sh \
     /usr/local/bin/
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+VOLUME /var/www/html
+
+COPY monicaenv.php /var/www/html/monicaenv.php
+COPY monicaenv-entrypoint /usr/local/bin/monicaenv-entrypoint
+
+RUN chmod +x /usr/local/bin/monicaenv-entrypoint
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "monicaenv-entrypoint"]
 CMD ["apache2-foreground"]
