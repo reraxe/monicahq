@@ -1,4 +1,4 @@
-# Monica's docker image
+# Monica's docker image w/ docker secrets
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/library/monica.svg)](https://hub.docker.com/_/monica/)
 ![Monica's docker](https://github.com/monicahq/docker/workflows/Monica's%20docker/badge.svg)
