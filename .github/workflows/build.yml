@@ -49,7 +49,7 @@ jobs:
         official-images/test/run.sh monica:${{ matrix.variant }}
 
     - name: Publish package
-      if: github.ref == 'refs/heads/master' && matrix.arch != 'i386'
+      if: github.ref == 'refs/heads/main' && matrix.arch != 'i386'
       run: |
         echo "$password" | docker login ghcr.io -u $username --password-stdin
         docker tag monica:${{ matrix.variant }} ghcr.io/monicahq/monica-dev:${{ matrix.variant }}
@@ -70,7 +70,7 @@ jobs:
 
     - name: Install bashbrew
       run: |
-        curl -fsSL -o bashbrew https://doi-janky.infosiftr.net/job/bashbrew/job/master/lastSuccessfulBuild/artifact/bashbrew-amd64
+        curl -fsSL -o bashbrew https://github.com/docker-library/bashbrew/releases/download/v0.1.3/bashbrew-amd64
         chmod +x "bashbrew"
     - name: Run stackbrew
       run: |
